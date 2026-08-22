@@ -22,3 +22,10 @@ typing-inspection==0.4.2
 typing_extensions==4.16.0
 tzdata==2026.2
 uvicorn==0.50.2
+
+langchain==1.2.8
+langchain-core==1.2.9
+langchain-groq==1.1.2
+langgraph==1.0.7
+langgraph-checkpoint==4.0.0
+langgraph-prebuilt==1.0.7
