@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Lexend, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import Navbar from "@/components/layout/Navbar";
+
 const lexend = Lexend({
   variable: "--font-sans",
   subsets: ["latin"],
@@ -36,6 +38,7 @@ export default function RootLayout({
           antialiased
         "
       >
+        <Navbar />
         {children}
       </body>
     </html>

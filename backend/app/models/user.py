@@ -5,6 +5,7 @@ from sqlmodel import Field, Relationship, SQLModel
 if TYPE_CHECKING:
     from app.models.repository import Repository
     from app.models.analysis import Analysis
+    from app.models.role_screening import RoleScreening
 
 
 class User(SQLModel, table=True):
@@ -22,6 +23,10 @@ class User(SQLModel, table=True):
         sa_relationship_kwargs={"cascade": "all, delete-orphan"},
     )
     analysis: Optional["Analysis"] = Relationship(
+        back_populates="user",
+        sa_relationship_kwargs={"cascade": "all, delete-orphan", "uselist": False},
+    )
+    screening: Optional["RoleScreening"] = Relationship(
         back_populates="user",
         sa_relationship_kwargs={"cascade": "all, delete-orphan", "uselist": False},
     )
